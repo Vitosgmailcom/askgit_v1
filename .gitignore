@@ -1,0 +1,7 @@
+.idea
+tests.egg-info
+build
+dist
+venv_askv1
+.env
+*.iml
