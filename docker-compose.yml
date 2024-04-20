@@ -10,7 +10,7 @@ services:
     volumes:
       - ./:/automation
 
-    command: /bin/sh -c "ls -ls && pytest -m healthcheck"
+    command: /bin/sh -c "ls -ls && pytest -m healthcheck --alluredir=allure-results"
 
 
 ###    Need to add env variables ###
