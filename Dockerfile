@@ -9,9 +9,9 @@ RUN apk update && \
     ln -s /opt/allure-2.13.8/bin/allure /usr/bin/allure && \
     rm allure-2.13.8.tgz
 
+WORKDIR /automation
 
 COPY ./ /automation
 COPY ./setup.py /automation
 
-WORKDIR /automation
-RUN /bin/sh -c "python3 setup.py install"
+RUN python3 setup.py install
