@@ -1,52 +1,48 @@
-name: Run with GitHib Actions
+name: Running Healthcheck test
 
 on: push
 
 jobs:
-  autotest:
+  healthcheck:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Checkout (copy) gh-pages repository to GitHub runner
-        uses: actions/checkout@v2
+      - name: Checkout gh-pages
+        uses: actions/checkout@v3
         with:
           ref: gh-pages
           path: ./.github/gh-pages
 
-      - name: Run docker-compose
+      - name: Running docker-compose
 #        env:
 #          DB_USER: ${{ secrets.DB_USER }}
 #          DB_PASS: ${{ secrets.DB_PASS }}
 #          DB_NAME: ${{ secrets.DB_NAME }}
 #          DB_PORT: ${{ secrets.DB_PORT }}
 #          DB_HOST: ${{ secrets.DB_HOST }}
+
         run: |
-          docker-compose up --exit-code-from test || true
+          docker-compose up --exit-code-from regression || true
 
-      - name: Copy history from gh-pages to allure-results
+      - name: Copy from gh-pages
         run: |
-          
-          sudo mkdir -p allure-results/history  # Создает директорию для истории Allure
-          sudo ls -la ./.github/gh-pages
-          sudo cp -R ./.github/* allure-results/history/
+          sudo mkdir -p allure-results/history
+          sudo cp -R ./.github/gh-pages/history/* allure-results/history/
 
-
-      - name: Generate Allure Report
+      - name: Generate Allure report
         run: |
-          sudo docker-compose run test /bin/sh -c "allure generate allure-results --clean -o allure-report"
+          docker-compose run regression /bin/sh -c "allure generate allure-results --clean -o allure-reports"
 
-      - name: Update Allure History
+      - name: Copy to gh-pages
         run: |
-          sudo cp -R allure-report/history/* ./.github/gh-pages/history/
+          sudo cp -R allure-reports/history/* ./.github/gh-pages/history/
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy gh-pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           token: ${{ secrets.CI_TOKEN }}
           branch: gh-pages
-          folder: allure-report
-          clean: true
-
+          folder: allure-reports

@@ -1,20 +1,21 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  test:
+  regression:
     image: python:3.12.0a4-alpine3.17
     build:
       context: .
       dockerfile: Dockerfile
+
     volumes:
-      - ./:/usr/workspace
-    command: /bin/sh -c "ls -ls && pytest -m healthcheck --alluredir=allure-results"
-    working_dir: /usr/workspace
-    # retriving variables from GitHub workflows/.yml file
+      - ./:/automation
+    working_dir: /automation
+
+    command: /bin/sh -c "ls -ls && pytest -m db2 --alluredir=allure-results"
+
 #    environment:
 #      - DB_USER=${DB_USER}
 #      - DB_PASS=${DB_PASS}
 #      - DB_NAME=${DB_NAME}
 #      - DB_PORT=${DB_PORT}
 #      - DB_HOST=${DB_HOST}
-
