@@ -1,7 +1,14 @@
+
+   # askgit
+venv_askv1
+.pytest_cash
 .idea
-tests.egg-info
+.env
 build
 dist
-venv_askv1
-.env
+UNKNOWN.egg-info
+tests.egg-info
+allure-result
+allure-results
 *.iml
+.github/workflows/test.yml
