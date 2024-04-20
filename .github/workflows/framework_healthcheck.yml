@@ -30,7 +30,7 @@ jobs:
         run: |
           
           sudo mkdir -p allure-results/history  # Создает директорию для истории Allure
-          sudo ls -la ./.github/gh-pages/
+          sudo ls -la ./.github
           sudo cp -R ./.github/gh-pages/history/* allure-results/history/
 
 
