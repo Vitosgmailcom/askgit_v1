@@ -1,18 +1,20 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  test:
+  regression:
     image: python:3.12.0a4-alpine3.17
     build:
       context: .
       dockerfile: Dockerfile
-
     volumes:
-      - ./:/automation
-
+      - ./:/usr/workspace
     command: /bin/sh -c "ls -ls && pytest -m healthcheck --alluredir=allure-results"
-
-
-###    Need to add env variables ###
+    working_dir: /usr/workspace
+    # retriving variables from GitHub workflows/.yml file
 #    environment:
 #      - DB_USER=${DB_USER}
+#      - DB_PASS=${DB_PASS}
+#      - DB_NAME=${DB_NAME}
+#      - DB_PORT=${DB_PORT}
+#      - DB_HOST=${DB_HOST}
+
