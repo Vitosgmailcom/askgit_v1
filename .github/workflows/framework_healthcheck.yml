@@ -26,14 +26,11 @@ jobs:
         run: |
           docker-compose up --exit-code-from test || true
 
-      - name: Check folder
-        run:
-
       - name: Copy history from gh-pages to allure-results
         run: |
           
           sudo mkdir -p allure-results/history  # Создает директорию для истории Allure
-          sudo ls
+          sudo ls -la
           sudo cp -R ./.github/gh-pages/history/* allure-results/history/
 
 
