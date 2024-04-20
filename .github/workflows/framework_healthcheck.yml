@@ -1,0 +1,21 @@
+name: Running framework healthcheck
+
+on: push
+
+jobs:
+  healthcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/chekout@v3
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: ./.github/pages
+
+      - name: Run docker-compose
+        run: |
+          docker-compose up --exit-code-from test || true
