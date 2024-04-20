@@ -12,3 +12,4 @@ allure-result
 allure-results
 *.iml
 .github/workflows/test.yml
+

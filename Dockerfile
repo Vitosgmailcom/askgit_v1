@@ -8,7 +8,7 @@ RUN apk update && \
     tar -zxvf allure-2.13.8.tgz -C /opt/ && \
     ln -s /opt/allure-2.13.8/bin/allure /usr/bin/allure && \
     rm allure-2.13.8.tgz
-
+#
 WORKDIR /automation
 
 COPY ./ /automation
