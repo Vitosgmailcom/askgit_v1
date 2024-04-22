@@ -1,6 +1,8 @@
+import allure
 import pytest
 import logging as log
 
+@allure.title("Healthc_check_tests")
 @pytest.mark.healthcheck
 @pytest.mark.hc1
 def test_healthcheck():
