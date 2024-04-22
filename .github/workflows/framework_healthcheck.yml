@@ -15,6 +15,10 @@ jobs:
           ref: gh-pages
           path: ./.github/gh-pages
 
+      - name: Run docker-compose
+        run: |
+          docker-compose run --exit-code-from test || true
+
       - name: Copy history from gh-pages
         run: |
           sudo mkdir -p allure-results/history
