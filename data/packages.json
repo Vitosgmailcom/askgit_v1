@@ -1,5 +1,35 @@
 {
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
-  "children" : [ ],
+  "children" : [ {
+    "name" : "tests.healthcheck.healthckeck_test",
+    "children" : [ {
+      "name" : "Healthc_check_tests",
+      "uid" : "4f7a45943415a480",
+      "parentUid" : "c53c11bb4ec94c5e076264c18dca4ced",
+      "status" : "passed",
+      "time" : {
+        "start" : 1713817353141,
+        "stop" : 1713817353142,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_database_connection_healthcheck",
+      "uid" : "a437aca7c69e0080",
+      "parentUid" : "c53c11bb4ec94c5e076264c18dca4ced",
+      "status" : "passed",
+      "time" : {
+        "start" : 1713817353144,
+        "stop" : 1713817353144,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "tests.healthcheck.healthckeck_test"
+  } ],
   "name" : "packages"
 }

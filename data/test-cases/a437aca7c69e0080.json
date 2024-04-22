@@ -1,0 +1,59 @@
+{
+  "uid" : "a437aca7c69e0080",
+  "name" : "test_database_connection_healthcheck",
+  "fullName" : "tests.healthcheck.healthckeck_test#test_database_connection_healthcheck",
+  "historyId" : "7a7ce8db157d6448f77f66be8e8997b4",
+  "time" : {
+    "start" : 1713817353144,
+    "stop" : 1713817353144,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "hc2"
+  }, {
+    "name" : "tag",
+    "value" : "healthcheck"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests.healthcheck"
+  }, {
+    "name" : "suite",
+    "value" : "healthckeck_test"
+  }, {
+    "name" : "host",
+    "value" : "71e2fcf2a6bb"
+  }, {
+    "name" : "thread",
+    "value" : "1-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.healthcheck.healthckeck_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "healthcheck", "hc2" ]
+  },
+  "source" : "a437aca7c69e0080.json",
+  "parameterValues" : [ ]
+}

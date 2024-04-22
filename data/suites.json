@@ -1,5 +1,39 @@
 {
   "uid" : "98d3104e051c652961429bf95fa0b5d6",
-  "children" : [ ],
+  "children" : [ {
+    "name" : "tests.healthcheck",
+    "children" : [ {
+      "name" : "healthckeck_test",
+      "children" : [ {
+        "name" : "Healthc_check_tests",
+        "uid" : "4f7a45943415a480",
+        "parentUid" : "26ef0d456a34b6c5f2d842830b3358ec",
+        "status" : "passed",
+        "time" : {
+          "start" : 1713817353141,
+          "stop" : 1713817353142,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_database_connection_healthcheck",
+        "uid" : "a437aca7c69e0080",
+        "parentUid" : "26ef0d456a34b6c5f2d842830b3358ec",
+        "status" : "passed",
+        "time" : {
+          "start" : 1713817353144,
+          "stop" : 1713817353144,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "26ef0d456a34b6c5f2d842830b3358ec"
+    } ],
+    "uid" : "dfef0438f26a2a8ef3e48306794fa4f6"
+  } ],
   "name" : "suites"
 }

@@ -1,0 +1,2 @@
+INFO     root:healthckeck_test.py:9 Running Healthcheck test
+DEBUG    root:healthckeck_test.py:10 Hello world
