@@ -9,6 +9,7 @@ services:
 
     volumes:
       - ./:/automation
+    working_dir: /automation
 
-    command: /bib/sh -c "pytest -m healthcheck --alluredir=allure-results"
+    command: /bin/sh -c "ls -ls && pytest -m healthcheck --alluredir=allure-results"
 
