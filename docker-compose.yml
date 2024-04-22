@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  regression:
+  test:
     image: python:3.12.0a4-alpine3.17
     build:
       context: .
@@ -9,13 +9,6 @@ services:
 
     volumes:
       - ./:/automation
-    working_dir: /automation
 
-    command: /bin/sh -c "ls -ls && pytest -m db2 --alluredir=allure-results"
+    command: /bib/sh -c "pytest -m healthcheck --alluredir=allure-results"
 
-#    environment:
-#      - DB_USER=${DB_USER}
-#      - DB_PASS=${DB_PASS}
-#      - DB_NAME=${DB_NAME}
-#      - DB_PORT=${DB_PORT}
-#      - DB_HOST=${DB_HOST}
